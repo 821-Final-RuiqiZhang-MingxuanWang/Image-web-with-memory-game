@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ruiqi Zhang, Mingxuan Wang">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    
+    <title>Image Library</title>
+
+  </head>
+ 
+  <body>
+    <br>
+    <h1 align='center'>Image Library</h1>
+    <br>
+    <h4 align='center'>Congratulation! You pass the game!</h4>
+    <br>
+    <p>This is an image library that includes some images about biostatistics. You can search the image by part of the file name or upload a png image.</p>
+    <br>
+    <form action="/passed/" enctype="multipart/form-data" method="post" role='form' class="form-control">
+        <div align='center' class="form-group" >
+          <input type="text" class="col-sm-4" id="name" name="search" placeholder="Search Image Name">
+          &nbsp;&nbsp;<button type="submit" class="btn btn-success">Search</button>
+          <br><br>
+          <a href="http://localhost:8105/upload/">
+            <button type="button" class="btn btn-success">Upload File</button>
+          </a>
+        </div>
+    </form>
+    <br><br>
+    <div class="row">
+    {% for i in range(image_number) %}
+      <div class="col-sm-10 col-md-6">
+           <div class="thumbnail" align='center'>
+              <img src="data:image/png;base64,{{image_dict['data'][i]}}" alt="image" class="col-sm-6 col-md-12 border">
+               <br><br>
+              <div class="caption" align='center'>
+                  <h5>{{image_dict['name'][i]}}</h5>
+                  <p>{{image_dict['description'][i]}}</p>
+                  <p>Source: {{image_dict['source'][i]}}</p>
+                  <p>Date: {{image_dict['date'][i]}}</p>
+              </div>
+           </div>
+      </div>
+    {% endfor %}
+    </div>       
+  </body>
+</html>
+      
