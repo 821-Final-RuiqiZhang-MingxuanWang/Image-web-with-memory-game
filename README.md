@@ -6,8 +6,7 @@ This simple image web is used to show some images related to biostatsics knowled
 
 clone this repository, cd to this file folder "Image-web-with-memory-game", then run in terminal.
 
->pip install -r requirements.txt  
-
+>pip install -r requirements.txt   
 >./main.sh
 
 Then users can use url "localhost:8105" to use the web.
