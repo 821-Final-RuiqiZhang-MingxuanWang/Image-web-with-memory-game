@@ -17,6 +17,12 @@ If users' answer is right, they will go to the image web. If their answer is wro
 
 About the image web, the images are in the image folder. After running the webpage once, it will also be stored in the sql database "image_data.db" in the form of base64 encoding. This web will present all images in the sql database, if users use search function, this web will just present images with keyword in file name. Users can also upload png file through the web. Besides the file, users also need to input file name, description, source and date. The uploaded file should be the form of png and the entered name cannot be the same as the existing name. After uploading new image, the web will also present the new image.
 
+### Test
+
+The test.py is mainly for SQL.py. CD to the file folder "Image-web-with-memory-game", then run
+
+>pytest test.py
+
 ### Architecture
 
 This web uses a vanilla JavaScript/HTML user interface, Python server, and SQLite database.
